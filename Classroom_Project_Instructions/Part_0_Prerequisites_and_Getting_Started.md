@@ -242,3 +242,8 @@ Now that we have our prerequsites set up and configured, we will be following up
 
 ## Project Assessment
 To understand how you project will be assessed, see the <a href="https://review.udacity.com/#!/rubrics/2804/view" target="_blank">Project Rubric</a>
+
+
+psql -h db01.cjg31hsbeoch.us-east-1.rds.amazonaws.com -U  postgres postgres
+
+psql -h db01.ct07kuwzblwb.us-east-1.rds.amazonaws.com -U postgres postgres
