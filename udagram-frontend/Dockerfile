@@ -1,11 +1,11 @@
 ### Build
-FROM node:16.20.0 as build
+FROM node:16 as build
 # FROM beevelop/ionic:latest AS ionic
 ## Create app directory
 WORKDIR /usr/src/app
 ## Install app dependencies
 ## A wildcard is used to ensure both package.json AND package-lock.json are copied
-COPY udagram-frontend/package*.json ./
+COPY package*.json ./
 RUN npm i -f
 RUN npm install -g @ionic/cli
 ## Bundle app source
