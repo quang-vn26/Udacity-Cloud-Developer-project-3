@@ -9,7 +9,7 @@ COPY udagram-frontend/package*.json ./
 RUN npm i -f
 RUN npm install -g @ionic/cli
 ## Bundle app source
-COPY udagram-frontend/. .
+COPY . .
 RUN ionic build
 ### Run 
 FROM nginx:alpine
