@@ -246,4 +246,4 @@ To understand how you project will be assessed, see the <a href="https://review.
 
 psql -h db01.cjg31hsbeoch.us-east-1.rds.amazonaws.com -U  postgres postgres
 
-psql -h db01.ct07kuwzblwb.us-east-1.rds.amazonaws.com -U postgres postgres
+psql -h db02.ct07kuwzblwb.us-east-1.rds.amazonaws.com -U postgres postgres
