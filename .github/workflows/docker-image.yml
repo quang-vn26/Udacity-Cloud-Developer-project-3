@@ -1,0 +1,58 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Login Docker Hub
+      env:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
+      run: docker login -u $username -p $password
+    
+    - name: Build the Docker image feed
+      run:  docker build -t udagram-api-feed ./udagram-api-feed
+
+    - name: Build the Docker image user
+      run:  docker build -t udagram-api-user ./udagram-api-user
+      
+    - name: Build the Docker image frontend
+      run:  docker build -t udagram-frontend ./udagram-frontend  
+      
+    - name: Build the Docker image reverseproxy
+      run:  docker build -t reverseproxy ./udagram-reverseproxy        
+      
+    - name: Build the Docker tag feed
+      run:  docker tag udagram-api-feed alannguyen23/udagram-api-feed:v1
+      
+    - name: Build the Docker tag user
+      run:  docker tag udagram-api-user alannguyen23/udagram-api-user:v1
+      
+    - name: Build the Docker tag frontend
+      run:  docker tag udagram-frontend alannguyen23/udagram-frontend:v1   
+       
+    - name: Build the Docker tag reverseproxy
+      run:  docker tag reverseproxy alannguyen23/reverseproxy:v1 
+      
+    - name: Docker push feed
+      run:  docker push alannguyen23/udagram-api-feed:v1
+
+    - name: Docker push user
+      run:  docker push alannguyen23/udagram-api-user:v1
+
+    - name: Docker push frontend
+      run:  docker push alannguyen23/udagram-frontend:v1
+
+    - name: Docker push reverseproxy
+      run:  docker push alannguyen23/reverseproxy:v1  
