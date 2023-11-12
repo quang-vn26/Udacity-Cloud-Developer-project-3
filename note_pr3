@@ -67,3 +67,8 @@ The key's randomart image is:
 =========
 dckr_pat_GBVK1iZP3lWYpf_wbJC9Q7u8onk
 github action
+
+===
+eks cluster
+EKSClusterRole,2
+NodeEC2Role
