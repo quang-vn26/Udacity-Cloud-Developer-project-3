@@ -72,3 +72,37 @@ github action
 eks cluster
 EKSClusterRole,2
 NodeEC2Role
+
+aws eks update-kubeconfig --region region-code --name my-cluster
+aws eks update-kubeconfig --region us-east-1 --name MyEKSCluster
+aws eks update-kubeconfig --name <cluster-name> --region <region> --kubeconfig ~/.kube/config --overwrite
+aws eks update-kubeconfig --region us-east-1 --name udacity
+eksctl create cluster --name MyEKSCluster --region=us-east-1 --nodes-min=2 --nodes-max=3
+
+[default]
+aws_access_key_id = AKIA6N6QHITKXFKDDYM3
+aws_secret_access_key = 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
+aws_session_token = FwoGZXIvYXdzEOv//////////wEaDESDUqN2icVXjboWUyLVAdg25Flq4GAcfoaKreZc66q/38cKYXHFxbcYiOdu1FDihOFVXZipjqpgXKPS5MdStJN4+yqmoUoIBd7qXueuGjaDHTTpr43PxaUsEbhNFyqGBBpJjUOvuAyNrkVHotghSbCpvUaUS9iE8zO37DrYdZXbgJIc5YPAmiOFhuHGNexLvRtpmUJavfQPrlHu1xSGeaPpgw2fkitCli5NidiH8K6/oE/z+RunQCc2lqIlOU1KZ/QtuCoym45BoZHzuG/wQsnBi8ho3eLJJJBhm2eXMwF3r9QQoSib4cCqBjItitFGnPiRaGZrye/OE8Mu34wWGOxRNJ6oKCM6XzFZ4ibGWZl6uiffiGM1BST0
+
+
+kubectl get nodes
+
+ kubectl apply -f env-secret.yaml
+
+ kubectl apply -f env-configmap.yaml
+
+ kubectl apply -f .\backend-feed-deployment.yaml
+
+ kubectl apply -f .\backend-feed-service.yaml   
+
+ kubectl apply -f .\backend-reverseproxy-deployment.yaml
+
+ kubectl apply -f .\backend-reverseproxy-service.yaml   
+
+ kubectl apply -f .\backend-user-deployment.yaml     
+
+ kubectl apply -f .\backend-user-service.yaml        
+
+ kubectl apply -f .\frontend-deployment.yaml 
+
+ kubectl apply -f .\frontend-service.yaml   
