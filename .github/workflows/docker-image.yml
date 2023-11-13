@@ -40,7 +40,7 @@ jobs:
       run:  docker tag udagram-api-user alannguyen23/udagram-api-user:v1
       
     - name: Build the Docker tag frontend
-      run:  docker tag udagram-frontend alannguyen23/udagram-frontend:v2   
+      run:  docker tag udagram-frontend alannguyen23/udagram-frontend:v1   
        
     - name: Build the Docker tag reverseproxy
       run:  docker tag reverseproxy alannguyen23/reverseproxy:v1 
